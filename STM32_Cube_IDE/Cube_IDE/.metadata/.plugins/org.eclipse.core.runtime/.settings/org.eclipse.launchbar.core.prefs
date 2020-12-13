@@ -1,0 +1,17 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:UART Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DHT11_sensor Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:black_pill_DHT11 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:black_pill-DHT11_lan_2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_LCD_5110_lan2 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_LCD_5110 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_LCD_f107 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_SPI_F107 Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_black_pill Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Black_pill_SPI Debug,org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Button_debounce Debug
+eclipse.preferences.version=1
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Bai_Kiem_Tra_3\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Bai_Kiem_Tra_3\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Black_pill_SPI\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:Black_pill_SPI\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DHT11_black_pill_1\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DHT11_sensor\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:DHT11_sensor\ Debug/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:black_pill_DHT11\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:black_pill_DHT11_lan_2\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:black_pill_test_SPI\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test\ Debug/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:test_black_pill\ Debug/activeLaunchMode=debug

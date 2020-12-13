@@ -1,0 +1,27 @@
+07:33:50 **** Incremental Build of configuration Debug for project Button_debounce ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'BUTTON_DEBOUCE':
+../Core/Src/main.c:233:10: warning: 'return' with a value, in function returning void
+   return _button_press_b1;
+          ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:215:6: note: declared here
+ void BUTTON_DEBOUCE()
+      ^~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "Button_debounce.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dat UTC\Documents\STM32\Cube_IDE\Button_debounce\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Button_debounce.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Button_debounce.elf
+ 
+arm-none-eabi-objdump -h -S  Button_debounce.elf  > "Button_debounce.list"
+arm-none-eabi-objcopy  -O binary  Button_debounce.elf  "Button_debounce.bin"
+arm-none-eabi-size   Button_debounce.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10076	    120	   1656	  11852	   2e4c	Button_debounce.elf
+Finished building: default.size.stdout
+ 
+Finished building: Button_debounce.bin
+ 
+Finished building: Button_debounce.list
+ 
+
+07:33:52 Build Finished. 0 errors, 1 warnings. (took 2s.497ms)
+

@@ -1,0 +1,28 @@
+14:29:14 **** Incremental Build of configuration Debug for project DHT11_sensor ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F107xC -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'delay':
+../Core/Src/main.c:64:3: warning: control reaches end of non-void function [-Wreturn-type]
+   }
+   ^
+../Core/Src/main.c: In function 'DHT11_Read':
+../Core/Src/main.c:97:2: warning: control reaches end of non-void function [-Wreturn-type]
+  }
+  ^
+arm-none-eabi-gcc -o "DHT11_sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dat UTC\Documents\STM32\Cube_IDE\DHT11_sensor\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="DHT11_sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: DHT11_sensor.elf
+ 
+arm-none-eabi-objdump -h -S  DHT11_sensor.elf  > "DHT11_sensor.list"
+arm-none-eabi-objcopy  -O binary  DHT11_sensor.elf  "DHT11_sensor.bin"
+arm-none-eabi-size   DHT11_sensor.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7268	     20	   1644	   8932	   22e4	DHT11_sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: DHT11_sensor.bin
+ 
+Finished building: DHT11_sensor.list
+ 
+
+14:29:18 Build Finished. 0 errors, 2 warnings. (took 3s.503ms)
+

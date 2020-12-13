@@ -1,0 +1,4 @@
+#Sun Jul 26 20:59:09 ICT 2020
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=hal_tim_getcounter

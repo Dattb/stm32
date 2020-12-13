@@ -1,0 +1,20 @@
+10:20:13 **** Incremental Build of configuration Debug for project Black_pill_SPI ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Black_pill_SPI.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dat UTC\Documents\STM32\Cube_IDE\Black_pill_SPI\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Black_pill_SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Black_pill_SPI.elf
+ 
+arm-none-eabi-objdump -h -S  Black_pill_SPI.elf  > "Black_pill_SPI.list"
+arm-none-eabi-objcopy  -O binary  Black_pill_SPI.elf  "Black_pill_SPI.bin"
+arm-none-eabi-size   Black_pill_SPI.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13272	    124	   1828	  15224	   3b78	Black_pill_SPI.elf
+Finished building: default.size.stdout
+ 
+Finished building: Black_pill_SPI.bin
+ 
+Finished building: Black_pill_SPI.list
+ 
+
+10:20:15 Build Finished. 0 errors, 0 warnings. (took 2s.419ms)
+

@@ -1,0 +1,135 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Pham Dat, UTC, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+C:\Users\Dat UTC\Documents\STM32\5110\MDK-ARM\5110.uvprojx
+Project File Date:  07/16/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Warning: You are compiling one or more files of source type C++ and have selected 'use MicroLIB'. MicroLIB does not support C++!
+  
+Build target '5110'
+compiling main.c...
+../Src/main.c(23): error:  #5: cannot open source input file "N5110.h": No such file or directory
+  #include "N5110.h"
+../Src/main.c: 0 warnings, 1 error
+compiling N5110.cpp...
+N5110.h(183): error:  #20: identifier "SPI" is undefined
+      SPI         *_spi;
+N5110.h(184): error:  #20: identifier "PwmOut" is undefined
+      PwmOut      *_led;
+N5110.h(185): error:  #20: identifier "DigitalOut" is undefined
+      DigitalOut  *_pwr;
+N5110.h(186): error:  #20: identifier "DigitalOut" is undefined
+      DigitalOut  *_sce;
+N5110.h(187): error:  #20: identifier "DigitalOut" is undefined
+      DigitalOut  *_rst;
+N5110.h(188): error:  #20: identifier "DigitalOut" is undefined
+      DigitalOut  *_dc;
+N5110.h(205): error:  #18: expected a ")"
+      N5110(PinName const pwrPin,
+N5110.h(205): error:  #70: incomplete type is not allowed
+      N5110(PinName const pwrPin,
+N5110.h(206): error:  #70: incomplete type is not allowed
+            PinName const scePin,
+N5110.h(206): error:  #101: "PinName" has already been declared in the current scope
+            PinName const scePin,
+N5110.h(206): error:  #65: expected a ";"
+            PinName const scePin,
+N5110.h(211): warning:  #12-D: parsing restarts here after previous syntax error
+            PinName const ledPin);
+N5110.h(223): error:  #18: expected a ")"
+      N5110(PinName const scePin,
+N5110.h(223): error:  #70: incomplete type is not allowed
+      N5110(PinName const scePin,
+N5110.h(223): error:  #101: "PinName" has already been declared in the current scope
+      N5110(PinName const scePin,
+N5110.h(224): error:  #70: incomplete type is not allowed
+            PinName const rstPin,
+N5110.h(224): error:  #101: "PinName" has already been declared in the current scope
+            PinName const rstPin,
+N5110.h(224): error:  #65: expected a ";"
+            PinName const rstPin,
+N5110.h(228): warning:  #12-D: parsing restarts here after previous syntax error
+            PinName const ledPin);
+N5110.h(534): warning:  #1-D: last line of file ends without a newline
+  #endif
+N5110.cpp(7): error:  #135: class "N5110"  has no member "N5110"
+  N5110::N5110(PinName const pwrPin,
+N5110.cpp(7): error:  #245: a nonstatic member reference must be relative to a specific object
+  N5110::N5110(PinName const pwrPin,
+N5110.cpp(7): error:  #18: expected a ")"
+  N5110::N5110(PinName const pwrPin,
+N5110.cpp(13): warning:  #12-D: parsing restarts here after previous syntax error
+               PinName const ledPin)
+N5110.cpp(14): error:  #65: expected a ";"
+      :
+N5110.cpp(396): warning:  #12-D: parsing restarts here after previous syntax error
+              drawLine(x+x0,y+y0,-x+x0,y+y0,type);
+N5110.cpp(397): error:  #77-D: this declaration has no storage class or type specifier
+              drawLine(y+x0,x+y0,-y+x0,x+y0,type);
+N5110.cpp(397): error:  #20: identifier "y" is undefined
+              drawLine(y+x0,x+y0,-y+x0,x+y0,type);
+N5110.cpp(397): error:  #20: identifier "x0" is undefined
+              drawLine(y+x0,x+y0,-y+x0,x+y0,type);
+N5110.cpp(397): error:  #18: expected a ")"
+              drawLine(y+x0,x+y0,-y+x0,x+y0,type);
+N5110.cpp(398): error:  #77-D: this declaration has no storage class or type specifier
+              drawLine(y+x0,-x+y0,-y+x0,-x+y0,type);
+N5110.cpp(398): error:  #247: variable "drawLine"  has already been defined
+              drawLine(y+x0,-x+y0,-y+x0,-x+y0,type);
+N5110.cpp(398): error:  #18: expected a ")"
+              drawLine(y+x0,-x+y0,-y+x0,-x+y0,type);
+N5110.cpp(399): error:  #77-D: this declaration has no storage class or type specifier
+              drawLine(x+x0,-y+y0,-x+x0,-y+y0,type);
+N5110.cpp(399): error:  #247: variable "drawLine"  has already been defined
+              drawLine(x+x0,-y+y0,-x+x0,-y+y0,type);
+N5110.cpp: 5 warnings, 30 errors
+"5110\5110.axf" - 31 Error(s), 5 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_5110
+  C:\Users\Dat UTC\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\Dat UTC\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

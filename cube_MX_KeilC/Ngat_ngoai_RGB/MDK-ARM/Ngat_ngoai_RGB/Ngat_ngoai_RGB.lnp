@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"ngat_ngoai_rgb\startup_stm32f103xb.o"
+"ngat_ngoai_rgb\main.o"
+"ngat_ngoai_rgb\stm32f1xx_it.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_msp.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_gpio_ex.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_tim.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_tim_ex.o"
+"ngat_ngoai_rgb\stm32f1xx_hal.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_rcc.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_rcc_ex.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_gpio.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_dma.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_cortex.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_pwr.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_flash.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_flash_ex.o"
+"ngat_ngoai_rgb\stm32f1xx_hal_exti.o"
+"ngat_ngoai_rgb\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "Ngat_ngoai_RGB\Ngat_ngoai_RGB.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Ngat_ngoai_RGB.map" -o Ngat_ngoai_RGB\Ngat_ngoai_RGB.axf

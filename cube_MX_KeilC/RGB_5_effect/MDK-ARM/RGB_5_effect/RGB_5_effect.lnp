@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"rgb_5_effect\startup_stm32f103xb.o"
+"rgb_5_effect\main.o"
+"rgb_5_effect\stm32f1xx_it.o"
+"rgb_5_effect\stm32f1xx_hal_msp.o"
+"rgb_5_effect\stm32f1xx_hal_gpio_ex.o"
+"rgb_5_effect\stm32f1xx_hal_tim.o"
+"rgb_5_effect\stm32f1xx_hal_tim_ex.o"
+"rgb_5_effect\stm32f1xx_hal.o"
+"rgb_5_effect\stm32f1xx_hal_rcc.o"
+"rgb_5_effect\stm32f1xx_hal_rcc_ex.o"
+"rgb_5_effect\stm32f1xx_hal_gpio.o"
+"rgb_5_effect\stm32f1xx_hal_dma.o"
+"rgb_5_effect\stm32f1xx_hal_cortex.o"
+"rgb_5_effect\stm32f1xx_hal_pwr.o"
+"rgb_5_effect\stm32f1xx_hal_flash.o"
+"rgb_5_effect\stm32f1xx_hal_flash_ex.o"
+"rgb_5_effect\stm32f1xx_hal_exti.o"
+"rgb_5_effect\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "RGB_5_effect\RGB_5_effect.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "RGB_5_effect.map" -o RGB_5_effect\RGB_5_effect.axf

@@ -1,0 +1,350 @@
+10:37:43 **** Build of configuration Debug for project ADC_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F107xC -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:44:1: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+ TIM_HandleTypeDef htim1;
+ ^~~~~~~~~~~~~~~~~
+ ADC_HandleTypeDef
+../Core/Src/main.c:46:1: error: unknown type name 'UART_HandleTypeDef'; did you mean 'ADC_HandleTypeDef'?
+ UART_HandleTypeDef huart4;
+ ^~~~~~~~~~~~~~~~~~
+ ADC_HandleTypeDef
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:104:5: warning: implicit declaration of function 'HAL_TIM_PWM_Start'; did you mean 'HAL_DMA_Start'? [-Wimplicit-function-declaration]
+     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+     ^~~~~~~~~~~~~~~~~
+     HAL_DMA_Start
+../Core/Src/main.c:104:30: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'ADC_CHANNEL_1'?
+     HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
+                              ^~~~~~~~~~~~~
+                              ADC_CHANNEL_1
+../Core/Src/main.c:104:30: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:105:28: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'TIM_CHANNEL_1'?
+   HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
+                            ^~~~~~~~~~~~~
+                            TIM_CHANNEL_1
+../Core/Src/main.c:106:28: error: 'TIM_CHANNEL_3' undeclared (first use in this function); did you mean 'TIM_CHANNEL_2'?
+   HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+                            ^~~~~~~~~~~~~
+                            TIM_CHANNEL_2
+../Core/Src/main.c:118:21: warning: statement with no effect [-Wunused-value]
+     trang_thai_truoc==trang_thai_sau;
+     ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+../Core/Src/main.c:123:9: error: 'count' undeclared (first use in this function)
+      if(count>=5)
+         ^~~~~
+../Core/Src/main.c:134:7: warning: implicit declaration of function 'HAL_UART_Receive'; did you mean 'HAL_PWR_DeInit'? [-Wimplicit-function-declaration]
+   if( HAL_UART_Receive(&huart4, &c,1, 0)==HAL_OK)
+       ^~~~~~~~~~~~~~~~
+       HAL_PWR_DeInit
+../Core/Src/main.c:137:64: warning: implicit declaration of function 'HAL_UART_Transmit'; did you mean 'HAL_PWR_DeInit'? [-Wimplicit-function-declaration]
+            case  'a' : {Mode_Color=1; char str[]="Color1\r\n"; HAL_UART_Transmit(&huart4,(uint8_t *)&str,sizeof(str),1000);break;}
+                                                                ^~~~~~~~~~~~~~~~~
+                                                                HAL_PWR_DeInit
+../Core/Src/main.c:152:5: warning: implicit declaration of function 'bam_xung' [-Wimplicit-function-declaration]
+     bam_xung (1,99,99 );
+     ^~~~~~~~
+../Core/Src/main.c:153:10: warning: unused variable 'str' [-Wunused-variable]
+     char str[]="Color1\r\n";
+          ^~~
+../Core/Src/main.c:161:10: warning: unused variable 'str' [-Wunused-variable]
+     char str[]="Color2\r\n";
+          ^~~
+../Core/Src/main.c:169:10: warning: unused variable 'str' [-Wunused-variable]
+     char str[]="Color3\r\n";
+          ^~~
+../Core/Src/main.c:177:10: warning: unused variable 'str' [-Wunused-variable]
+     char str[]="Color4\r\n";
+          ^~~
+../Core/Src/main.c:185:10: warning: unused variable 'str' [-Wunused-variable]
+     char str[]="Color5\r\n";
+          ^~~
+../Core/Src/main.c:108:64: warning: variable 'button_state' set but not used [-Wunused-but-set-variable]
+   unsigned short trang_thai_truoc, trang_thai_sau,button_count,button_state;
+                                                                ^~~~~~~~~~~~
+../Core/Src/main.c:107:30: warning: unused variable 'duty3' [-Wunused-variable]
+   unsigned short duty1,duty2,duty3;
+                              ^~~~~
+../Core/Src/main.c:107:24: warning: unused variable 'duty2' [-Wunused-variable]
+   unsigned short duty1,duty2,duty3;
+                        ^~~~~
+../Core/Src/main.c:107:18: warning: unused variable 'duty1' [-Wunused-variable]
+   unsigned short duty1,duty2,duty3;
+                  ^~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:240:9: warning: conflicting types for 'bam_xung'
+    void bam_xung (int duty1,int duty2, int duty3 )
+         ^~~~~~~~
+../Core/Src/main.c:152:5: note: previous implicit declaration of 'bam_xung' was here
+     bam_xung (1,99,99 );
+     ^~~~~~~~
+../Core/Src/main.c: In function 'bam_xung':
+../Core/Src/main.c:243:6: warning: implicit declaration of function '__HAL_TIM_SET_COMPARE'; did you mean '__HAL_DMA_GET_COUNTER'? [-Wimplicit-function-declaration]
+      __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_1,10*duty1);
+      ^~~~~~~~~~~~~~~~~~~~~
+      __HAL_DMA_GET_COUNTER
+../Core/Src/main.c:243:35: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'ADC_CHANNEL_1'?
+      __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_1,10*duty1);
+                                   ^~~~~~~~~~~~~
+                                   ADC_CHANNEL_1
+../Core/Src/main.c:244:35: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'TIM_CHANNEL_1'?
+      __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_2,10*duty2);
+                                   ^~~~~~~~~~~~~
+                                   TIM_CHANNEL_1
+../Core/Src/main.c:245:35: error: 'TIM_CHANNEL_3' undeclared (first use in this function); did you mean 'TIM_CHANNEL_2'?
+      __HAL_TIM_SET_COMPARE(&htim1,TIM_CHANNEL_3,10*duty3);
+                                   ^~~~~~~~~~~~~
+                                   TIM_CHANNEL_2
+../Core/Src/main.c: In function 'MX_TIM1_Init':
+../Core/Src/main.c:298:3: error: unknown type name 'TIM_ClockConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+   TIM_ClockConfigTypeDef sClockSourceConfig = {0};
+   ^~~~~~~~~~~~~~~~~~~~~~
+   EXTI_ConfigTypeDef
+../Core/Src/main.c:299:3: error: unknown type name 'TIM_MasterConfigTypeDef'; did you mean 'EXTI_ConfigTypeDef'?
+   TIM_MasterConfigTypeDef sMasterConfig = {0};
+   ^~~~~~~~~~~~~~~~~~~~~~~
+   EXTI_ConfigTypeDef
+../Core/Src/main.c:300:3: error: unknown type name 'TIM_OC_InitTypeDef'; did you mean 'ADC_InitTypeDef'?
+   TIM_OC_InitTypeDef sConfigOC = {0};
+   ^~~~~~~~~~~~~~~~~~
+   ADC_InitTypeDef
+../Core/Src/main.c:301:3: error: unknown type name 'TIM_BreakDeadTimeConfigTypeDef'
+   TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:306:8: error: request for member 'Instance' in something not a structure or union
+   htim1.Instance = TIM1;
+        ^
+../Core/Src/main.c:307:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.Prescaler = 7;
+        ^
+../Core/Src/main.c:308:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+        ^
+../Core/Src/main.c:308:28: error: 'TIM_COUNTERMODE_UP' undeclared (first use in this function); did you mean '__COUNTER__'?
+   htim1.Init.CounterMode = TIM_COUNTERMODE_UP;
+                            ^~~~~~~~~~~~~~~~~~
+                            __COUNTER__
+../Core/Src/main.c:309:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.Period = 999;
+        ^
+../Core/Src/main.c:310:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+        ^
+../Core/Src/main.c:310:30: error: 'TIM_CLOCKDIVISION_DIV1' undeclared (first use in this function); did you mean 'IS_TIM_CLOCK_DIVISION_INSTANCE'?
+   htim1.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+                              ^~~~~~~~~~~~~~~~~~~~~~
+                              IS_TIM_CLOCK_DIVISION_INSTANCE
+../Core/Src/main.c:311:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.RepetitionCounter = 0;
+        ^
+../Core/Src/main.c:312:8: error: request for member 'Init' in something not a structure or union
+   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+        ^
+../Core/Src/main.c:312:34: error: 'TIM_AUTORELOAD_PRELOAD_DISABLE' undeclared (first use in this function)
+   htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:313:7: warning: implicit declaration of function 'HAL_TIM_Base_Init'; did you mean 'HAL_MspDeInit'? [-Wimplicit-function-declaration]
+   if (HAL_TIM_Base_Init(&htim1) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~
+       HAL_MspDeInit
+../Core/Src/main.c:317:21: error: request for member 'ClockSource' in something not a structure or union
+   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+                     ^
+../Core/Src/main.c:317:36: error: 'TIM_CLOCKSOURCE_INTERNAL' undeclared (first use in this function); did you mean 'IS_TIM_CLOCKSOURCE_TIX_INSTANCE'?
+   sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+                                    IS_TIM_CLOCKSOURCE_TIX_INSTANCE
+../Core/Src/main.c:318:7: warning: implicit declaration of function 'HAL_TIM_ConfigClockSource' [-Wimplicit-function-declaration]
+   if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:322:7: warning: implicit declaration of function 'HAL_TIM_PWM_Init'; did you mean 'HAL_DMA_Init'? [-Wimplicit-function-declaration]
+   if (HAL_TIM_PWM_Init(&htim1) != HAL_OK)
+       ^~~~~~~~~~~~~~~~
+       HAL_DMA_Init
+../Core/Src/main.c:326:16: error: request for member 'MasterOutputTrigger' in something not a structure or union
+   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+                ^
+../Core/Src/main.c:326:39: error: 'TIM_TRGO_RESET' undeclared (first use in this function); did you mean 'TIM_RCR_REP'?
+   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+                                       ^~~~~~~~~~~~~~
+                                       TIM_RCR_REP
+../Core/Src/main.c:327:16: error: request for member 'MasterSlaveMode' in something not a structure or union
+   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+                ^
+../Core/Src/main.c:327:35: error: 'TIM_MASTERSLAVEMODE_DISABLE' undeclared (first use in this function); did you mean 'TIM_AUTORELOAD_PRELOAD_DISABLE'?
+   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                   TIM_AUTORELOAD_PRELOAD_DISABLE
+../Core/Src/main.c:328:7: warning: implicit declaration of function 'HAL_TIMEx_MasterConfigSynchronization' [-Wimplicit-function-declaration]
+   if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:332:12: error: request for member 'OCMode' in something not a structure or union
+   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+            ^
+../Core/Src/main.c:332:22: error: 'TIM_OCMODE_PWM1' undeclared (first use in this function)
+   sConfigOC.OCMode = TIM_OCMODE_PWM1;
+                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:333:12: error: request for member 'Pulse' in something not a structure or union
+   sConfigOC.Pulse = 0;
+            ^
+../Core/Src/main.c:334:12: error: request for member 'OCPolarity' in something not a structure or union
+   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+            ^
+../Core/Src/main.c:334:26: error: 'TIM_OCPOLARITY_HIGH' undeclared (first use in this function); did you mean 'DMA_PRIORITY_HIGH'?
+   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+                          ^~~~~~~~~~~~~~~~~~~
+                          DMA_PRIORITY_HIGH
+../Core/Src/main.c:335:12: error: request for member 'OCNPolarity' in something not a structure or union
+   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+            ^
+../Core/Src/main.c:335:27: error: 'TIM_OCNPOLARITY_HIGH' undeclared (first use in this function); did you mean 'TIM_OCPOLARITY_HIGH'?
+   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
+                           ^~~~~~~~~~~~~~~~~~~~
+                           TIM_OCPOLARITY_HIGH
+../Core/Src/main.c:336:12: error: request for member 'OCFastMode' in something not a structure or union
+   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+            ^
+../Core/Src/main.c:336:26: error: 'TIM_OCFAST_DISABLE' undeclared (first use in this function); did you mean 'ADC_SCAN_DISABLE'?
+   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+                          ^~~~~~~~~~~~~~~~~~
+                          ADC_SCAN_DISABLE
+../Core/Src/main.c:337:12: error: request for member 'OCIdleState' in something not a structure or union
+   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+            ^
+../Core/Src/main.c:337:27: error: 'TIM_OCIDLESTATE_RESET' undeclared (first use in this function); did you mean 'HAL_ADC_STATE_RESET'?
+   sConfigOC.OCIdleState = TIM_OCIDLESTATE_RESET;
+                           ^~~~~~~~~~~~~~~~~~~~~
+                           HAL_ADC_STATE_RESET
+../Core/Src/main.c:338:12: error: request for member 'OCNIdleState' in something not a structure or union
+   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+            ^
+../Core/Src/main.c:338:28: error: 'TIM_OCNIDLESTATE_RESET' undeclared (first use in this function); did you mean 'TIM_OCIDLESTATE_RESET'?
+   sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
+                            ^~~~~~~~~~~~~~~~~~~~~~
+                            TIM_OCIDLESTATE_RESET
+../Core/Src/main.c:339:7: warning: implicit declaration of function 'HAL_TIM_PWM_ConfigChannel'; did you mean 'HAL_ADC_ConfigChannel'? [-Wimplicit-function-declaration]
+   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~
+       HAL_ADC_ConfigChannel
+../Core/Src/main.c:339:53: error: 'TIM_CHANNEL_1' undeclared (first use in this function); did you mean 'ADC_CHANNEL_1'?
+   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
+                                                     ^~~~~~~~~~~~~
+                                                     ADC_CHANNEL_1
+../Core/Src/main.c:343:53: error: 'TIM_CHANNEL_2' undeclared (first use in this function); did you mean 'TIM_CHANNEL_1'?
+   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+                                                     ^~~~~~~~~~~~~
+                                                     TIM_CHANNEL_1
+../Core/Src/main.c:347:12: error: request for member 'Pulse' in something not a structure or union
+   sConfigOC.Pulse = 499;
+            ^
+../Core/Src/main.c:348:53: error: 'TIM_CHANNEL_3' undeclared (first use in this function); did you mean 'TIM_CHANNEL_2'?
+   if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
+                                                     ^~~~~~~~~~~~~
+                                                     TIM_CHANNEL_2
+../Core/Src/main.c:352:23: error: request for member 'OffStateRunMode' in something not a structure or union
+   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+                       ^
+../Core/Src/main.c:352:42: error: 'TIM_OSSR_DISABLE' undeclared (first use in this function); did you mean 'TIM_OCFAST_DISABLE'?
+   sBreakDeadTimeConfig.OffStateRunMode = TIM_OSSR_DISABLE;
+                                          ^~~~~~~~~~~~~~~~
+                                          TIM_OCFAST_DISABLE
+../Core/Src/main.c:353:23: error: request for member 'OffStateIDLEMode' in something not a structure or union
+   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+                       ^
+../Core/Src/main.c:353:43: error: 'TIM_OSSI_DISABLE' undeclared (first use in this function); did you mean 'TIM_OSSR_DISABLE'?
+   sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
+                                           ^~~~~~~~~~~~~~~~
+                                           TIM_OSSR_DISABLE
+../Core/Src/main.c:354:23: error: request for member 'LockLevel' in something not a structure or union
+   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+                       ^
+../Core/Src/main.c:354:36: error: 'TIM_LOCKLEVEL_OFF' undeclared (first use in this function)
+   sBreakDeadTimeConfig.LockLevel = TIM_LOCKLEVEL_OFF;
+                                    ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:355:23: error: request for member 'DeadTime' in something not a structure or union
+   sBreakDeadTimeConfig.DeadTime = 0;
+                       ^
+../Core/Src/main.c:356:23: error: request for member 'BreakState' in something not a structure or union
+   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+                       ^
+../Core/Src/main.c:356:37: error: 'TIM_BREAK_DISABLE' undeclared (first use in this function); did you mean 'TIM_OSSI_DISABLE'?
+   sBreakDeadTimeConfig.BreakState = TIM_BREAK_DISABLE;
+                                     ^~~~~~~~~~~~~~~~~
+                                     TIM_OSSI_DISABLE
+../Core/Src/main.c:357:23: error: request for member 'BreakPolarity' in something not a structure or union
+   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+                       ^
+../Core/Src/main.c:357:40: error: 'TIM_BREAKPOLARITY_HIGH' undeclared (first use in this function); did you mean 'TIM_OCNPOLARITY_HIGH'?
+   sBreakDeadTimeConfig.BreakPolarity = TIM_BREAKPOLARITY_HIGH;
+                                        ^~~~~~~~~~~~~~~~~~~~~~
+                                        TIM_OCNPOLARITY_HIGH
+../Core/Src/main.c:358:23: error: request for member 'AutomaticOutput' in something not a structure or union
+   sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+                       ^
+../Core/Src/main.c:358:42: error: 'TIM_AUTOMATICOUTPUT_DISABLE' undeclared (first use in this function); did you mean 'TIM_OCFAST_DISABLE'?
+   sBreakDeadTimeConfig.AutomaticOutput = TIM_AUTOMATICOUTPUT_DISABLE;
+                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                          TIM_OCFAST_DISABLE
+../Core/Src/main.c:359:7: warning: implicit declaration of function 'HAL_TIMEx_ConfigBreakDeadTime' [-Wimplicit-function-declaration]
+   if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK)
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:366:3: warning: implicit declaration of function 'HAL_TIM_MspPostInit'; did you mean 'HAL_ADC_MspDeInit'? [-Wimplicit-function-declaration]
+   HAL_TIM_MspPostInit(&htim1);
+   ^~~~~~~~~~~~~~~~~~~
+   HAL_ADC_MspDeInit
+../Core/Src/main.c: In function 'MX_UART4_Init':
+../Core/Src/main.c:385:9: error: request for member 'Instance' in something not a structure or union
+   huart4.Instance = UART4;
+         ^
+../Core/Src/main.c:386:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.BaudRate = 57600;
+         ^
+../Core/Src/main.c:387:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.WordLength = UART_WORDLENGTH_8B;
+         ^
+../Core/Src/main.c:387:28: error: 'UART_WORDLENGTH_8B' undeclared (first use in this function)
+   huart4.Init.WordLength = UART_WORDLENGTH_8B;
+                            ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:388:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.StopBits = UART_STOPBITS_1;
+         ^
+../Core/Src/main.c:388:26: error: 'UART_STOPBITS_1' undeclared (first use in this function); did you mean 'USART_GTPR_PSC_1'?
+   huart4.Init.StopBits = UART_STOPBITS_1;
+                          ^~~~~~~~~~~~~~~
+                          USART_GTPR_PSC_1
+../Core/Src/main.c:389:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.Parity = UART_PARITY_NONE;
+         ^
+../Core/Src/main.c:389:24: error: 'UART_PARITY_NONE' undeclared (first use in this function); did you mean 'FLASH_PROC_NONE'?
+   huart4.Init.Parity = UART_PARITY_NONE;
+                        ^~~~~~~~~~~~~~~~
+                        FLASH_PROC_NONE
+../Core/Src/main.c:390:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.Mode = UART_MODE_TX_RX;
+         ^
+../Core/Src/main.c:390:22: error: 'UART_MODE_TX_RX' undeclared (first use in this function)
+   huart4.Init.Mode = UART_MODE_TX_RX;
+                      ^~~~~~~~~~~~~~~
+../Core/Src/main.c:391:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+         ^
+../Core/Src/main.c:391:27: error: 'UART_HWCONTROL_NONE' undeclared (first use in this function); did you mean 'UART_PARITY_NONE'?
+   huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+                           ^~~~~~~~~~~~~~~~~~~
+                           UART_PARITY_NONE
+../Core/Src/main.c:392:9: error: request for member 'Init' in something not a structure or union
+   huart4.Init.OverSampling = UART_OVERSAMPLING_16;
+         ^
+../Core/Src/main.c:392:30: error: 'UART_OVERSAMPLING_16' undeclared (first use in this function); did you mean 'UART_STOPBITS_1'?
+   huart4.Init.OverSampling = UART_OVERSAMPLING_16;
+                              ^~~~~~~~~~~~~~~~~~~~
+                              UART_STOPBITS_1
+../Core/Src/main.c:393:7: warning: implicit declaration of function 'HAL_UART_Init'; did you mean 'HAL_ADC_Init'? [-Wimplicit-function-declaration]
+   if (HAL_UART_Init(&huart4) != HAL_OK)
+       ^~~~~~~~~~~~~
+       HAL_ADC_Init
+make: *** [Core/Src/subdir.mk:33: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+10:37:47 Build Failed. 74 errors, 24 warnings. (took 3s.999ms)
+

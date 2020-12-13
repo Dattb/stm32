@@ -1,0 +1,58 @@
+11:28:21 **** Incremental Build of configuration Debug for project black_pill_DHT11_lan_2 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'DHT11_Start':
+../Core/Src/main.c:63:2: warning: implicit declaration of function 'Set_Pin_Output' [-Wimplicit-function-declaration]
+  Set_Pin_Output (GPIOB,GPIO_PIN_12);  // set the pin as output
+  ^~~~~~~~~~~~~~
+../Core/Src/main.c:65:2: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  delay (18000);   // wait for 18ms
+  ^~~~~
+../Core/Src/main.c:66:2: warning: implicit declaration of function 'Set_Pin_Input' [-Wimplicit-function-declaration]
+  Set_Pin_Input(GPIOA,GPIO_PIN_12);    // set as input
+  ^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:110:4: warning: implicit declaration of function 'DHT_Start'; did you mean 'DHT11_Start'? [-Wimplicit-function-declaration]
+    DHT_Start();
+    ^~~~~~~~~
+    DHT11_Start
+../Core/Src/main.c:111:21: warning: implicit declaration of function 'DHT_Check_Response' [-Wimplicit-function-declaration]
+    Respones_State = DHT_Check_Response();
+                     ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:112:13: warning: implicit declaration of function 'DHT_Read_Data' [-Wimplicit-function-declaration]
+    int_RH = DHT_Read_Data();
+             ^~~~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:246:6: warning: conflicting types for 'delay'
+ void delay (uint16_t time)
+      ^~~~~
+../Core/Src/main.c:65:2: note: previous implicit declaration of 'delay' was here
+  delay (18000);   // wait for 18ms
+  ^~~~~
+../Core/Src/main.c:257:7: warning: conflicting types for 'Set_Pin_Output'
+  void Set_Pin_Output(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+       ^~~~~~~~~~~~~~
+../Core/Src/main.c:63:2: note: previous implicit declaration of 'Set_Pin_Output' was here
+  Set_Pin_Output (GPIOB,GPIO_PIN_12);  // set the pin as output
+  ^~~~~~~~~~~~~~
+../Core/Src/main.c:268:7: warning: conflicting types for 'Set_Pin_Input'
+  void Set_Pin_Input(GPIO_TypeDef *GPIOx, uint16_t GPIO_Pin)
+       ^~~~~~~~~~~~~
+../Core/Src/main.c:66:2: note: previous implicit declaration of 'Set_Pin_Input' was here
+  Set_Pin_Input(GPIOA,GPIO_PIN_12);    // set as input
+  ^~~~~~~~~~~~~
+arm-none-eabi-gcc -o "black_pill_DHT11_lan_2.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dat UTC\Documents\STM32\Cube_IDE\black_pill_DHT11_lan_2\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="black_pill_DHT11_lan_2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Core/Src/main.o: In function `main':
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:110: undefined reference to `DHT_Start'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:111: undefined reference to `DHT_Check_Response'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:112: undefined reference to `DHT_Read_Data'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:113: undefined reference to `DHT_Read_Data'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:114: undefined reference to `DHT_Read_Data'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:115: undefined reference to `DHT_Read_Data'
+C:/Users/Dat UTC/Documents/STM32/Cube_IDE/black_pill_DHT11_lan_2/Debug/../Core/Src/main.c:116: undefined reference to `DHT_Read_Data'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:44: black_pill_DHT11_lan_2.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+11:28:24 Build Failed. 8 errors, 9 warnings. (took 2s.526ms)
+

@@ -1,0 +1,41 @@
+15:55:23 **** Incremental Build of configuration Debug for project test_SPI_F107 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F107xC -DDEBUG -c -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:112:29: warning: passing argument 2 of 'HAL_SPI_Transmit' makes pointer from integer without a cast [-Wint-conversion]
+    HAL_SPI_Transmit(&hspi1, SPI1_Buff_Tx[0],1,100);
+                             ^~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:329:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:22:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:667:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ HAL_StatusTypeDef HAL_SPI_Transmit(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:113:27: warning: passing argument 2 of 'HAL_SPI_Receive' makes pointer from integer without a cast [-Wint-conversion]
+    HAL_SPI_Receive(&hspi2,SPI2_Buff_Rx[0],1, 100);
+                           ^~~~~~~~~~~~
+In file included from ../Core/Inc/stm32f1xx_hal_conf.h:329:0,
+                 from ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:22:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_spi.h:668:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'uint8_t {aka unsigned char}'
+ HAL_StatusTypeDef HAL_SPI_Receive(SPI_HandleTypeDef *hspi, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "test_SPI_F107.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\Dat UTC\Documents\STM32\Cube_IDE\test_SPI_F107\STM32F107VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test_SPI_F107.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: test_SPI_F107.elf
+ 
+arm-none-eabi-objdump -h -S  test_SPI_F107.elf  > "test_SPI_F107.list"
+arm-none-eabi-objcopy  -O binary  test_SPI_F107.elf  "test_SPI_F107.bin"
+arm-none-eabi-size   test_SPI_F107.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14992	    128	   1840	  16960	   4240	test_SPI_F107.elf
+Finished building: default.size.stdout
+ 
+Finished building: test_SPI_F107.bin
+ 
+Finished building: test_SPI_F107.list
+ 
+
+15:55:26 Build Finished. 0 errors, 2 warnings. (took 2s.677ms)
+

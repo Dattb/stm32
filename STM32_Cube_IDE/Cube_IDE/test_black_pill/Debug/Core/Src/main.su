@@ -1,0 +1,15 @@
+main.c:86:5:main	16	static
+main.c:481:6:SystemClock_Config	72	static
+main.c:519:13:MX_TIM1_Init	96	static
+main.c:603:13:MX_TIM4_Init	32	static
+main.c:648:13:MX_USART3_UART_Init	8	static
+main.c:681:13:MX_GPIO_Init	40	static
+main.c:735:6:bam_xung	24	static
+main.c:746:6:Delay_us	16	static
+main.c:755:6:Set_Pin_Output	32	static
+main.c:766:6:Set_Pin_Input	32	static
+main.c:776:6:DHT_Start	8	static
+main.c:787:9:DHT_Check_Response	16	static
+main.c:809:9:DHT_Read_Data	16	static
+main.c:849:1:__io_putchar	16	static
+main.c:862:6:Error_Handler	4	static

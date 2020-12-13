@@ -1,0 +1,10 @@
+06:25:18 **** Build of configuration Debug for project test_LCD_5110 ****
+make -j4 all 
+arm-none-eabi-size   test_LCD_5110.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11836	     20	   2076	  13932	   366c	test_LCD_5110.elf
+Finished building: default.size.stdout
+ 
+
+06:25:19 Build Finished. 0 errors, 0 warnings. (took 1s.339ms)
+

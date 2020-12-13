@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"test_stm32107_proteus\startup_stm32f107xc.o"
+"test_stm32107_proteus\main.o"
+"test_stm32107_proteus\stm32f1xx_it.o"
+"test_stm32107_proteus\stm32f1xx_hal_msp.o"
+"test_stm32107_proteus\stm32f1xx_hal_gpio_ex.o"
+"test_stm32107_proteus\stm32f1xx_hal_tim.o"
+"test_stm32107_proteus\stm32f1xx_hal_tim_ex.o"
+"test_stm32107_proteus\stm32f1xx_hal.o"
+"test_stm32107_proteus\stm32f1xx_hal_rcc.o"
+"test_stm32107_proteus\stm32f1xx_hal_rcc_ex.o"
+"test_stm32107_proteus\stm32f1xx_hal_gpio.o"
+"test_stm32107_proteus\stm32f1xx_hal_dma.o"
+"test_stm32107_proteus\stm32f1xx_hal_cortex.o"
+"test_stm32107_proteus\stm32f1xx_hal_pwr.o"
+"test_stm32107_proteus\stm32f1xx_hal_flash.o"
+"test_stm32107_proteus\stm32f1xx_hal_flash_ex.o"
+"test_stm32107_proteus\stm32f1xx_hal_exti.o"
+"test_stm32107_proteus\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "Test_STM32107_proteus\Test_STM32107_proteus.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Test_STM32107_proteus.map" -o Test_STM32107_proteus\Test_STM32107_proteus.axf

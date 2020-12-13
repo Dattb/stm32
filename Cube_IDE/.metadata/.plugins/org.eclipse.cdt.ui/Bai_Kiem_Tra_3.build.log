@@ -1,0 +1,10 @@
+10:37:48 **** Build of configuration Debug for project Bai_Kiem_Tra_3 ****
+make -j4 all 
+arm-none-eabi-size   Bai_Kiem_Tra_3.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7888	     20	   1636	   9544	   2548	Bai_Kiem_Tra_3.elf
+Finished building: default.size.stdout
+ 
+
+10:37:50 Build Finished. 0 errors, 0 warnings. (took 1s.820ms)
+

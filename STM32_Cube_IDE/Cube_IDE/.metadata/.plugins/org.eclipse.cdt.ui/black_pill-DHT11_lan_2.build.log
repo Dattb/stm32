@@ -1,0 +1,10 @@
+06:25:04 **** Build of configuration Debug for project black_pill-DHT11_lan_2 ****
+make -j4 all 
+arm-none-eabi-size   black_pill-DHT11_lan_2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  12200	    120	   1720	  14040	   36d8	black_pill-DHT11_lan_2.elf
+Finished building: default.size.stdout
+ 
+
+06:25:05 Build Finished. 0 errors, 0 warnings. (took 1s.423ms)
+
